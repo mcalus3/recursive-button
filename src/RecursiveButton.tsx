@@ -5,25 +5,31 @@ const RecursiveButton: React.FC = () => {
   const [clicked, setClicked] = React.useState(false);
 
   return clicked ? (
-    <Box style={{ display: "flex", flexDirection: "column" }}>
-      <Box style={{ display: "flex" }}>
+    <Box
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        flexGrow: 1
+      }}
+    >
+      <Box style={{ display: "flex", flexGrow: 1 }}>
         <RecursiveButton />
         <RecursiveButton />
         <RecursiveButton />
       </Box>
-      <Box style={{ display: "flex" }}>
+      <Box style={{ display: "flex", flexGrow: 1 }}>
         <RecursiveButton />
-        <Box>{".........."}</Box>
+        <Box style={{ flexGrow: 1 }}></Box>
         <RecursiveButton />
       </Box>
-      <Box style={{ display: "flex" }}>
+      <Box style={{ display: "flex", flexGrow: 1 }}>
         <RecursiveButton />
         <RecursiveButton />
         <RecursiveButton />
       </Box>
     </Box>
   ) : (
-    <button onClick={() => setClicked(true)}>click</button>
+    <button onClick={() => setClicked(true)} style={{ flexGrow: 1 }}></button>
   );
 };
 
