@@ -1,35 +1,32 @@
 import React from "react";
-import Box from "@material-ui/core/Box";
+import "./RecursiveButton.css";
 
 const RecursiveButton: React.FC = () => {
   const [clicked, setClicked] = React.useState(false);
 
   return clicked ? (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        flexGrow: 1
-      }}
-    >
-      <Box style={{ display: "flex", flexGrow: 1 }}>
+    <div className="f-column f-grow">
+      <div className="d-flex f-grow">
         <RecursiveButton />
         <RecursiveButton />
         <RecursiveButton />
-      </Box>
-      <Box style={{ display: "flex", flexGrow: 1 }}>
+      </div>
+      <div className="d-flex f-grow">
         <RecursiveButton />
-        <Box style={{ flexGrow: 1 }}></Box>
+        <div className="f-grow"></div>
         <RecursiveButton />
-      </Box>
-      <Box style={{ display: "flex", flexGrow: 1 }}>
+      </div>
+      <div className="d-flex f-grow">
         <RecursiveButton />
         <RecursiveButton />
         <RecursiveButton />
-      </Box>
-    </Box>
+      </div>
+    </div>
   ) : (
-    <button onClick={() => setClicked(true)} style={{ flexGrow: 1 }}></button>
+    <button
+      className="r-button f-grow"
+      onClick={() => setClicked(true)}
+    ></button>
   );
 };
 

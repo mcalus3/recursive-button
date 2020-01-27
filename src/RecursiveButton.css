@@ -1,0 +1,18 @@
+.f-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.f-grow {
+  flex-grow: 1;
+}
+
+.r-button {
+  border: 0;
+  padding: 0;
+  outline: 1px solid black;
+}

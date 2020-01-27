@@ -1,14 +1,14 @@
-.App {
-  text-align: center;
+.app {
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button-container {
+  width: 100vmin;
+  height: 100vmin;
   display: flex;
-  align-items: stretch;
   justify-content: space-evenly;
-
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
