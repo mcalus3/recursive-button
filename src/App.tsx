@@ -6,7 +6,7 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <div className="button-container">
-        <RecursiveButton />
+        <RecursiveButton first />
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
 import React from "react";
 import "./RecursiveButton.css";
 
-const RecursiveButton: React.FC = () => {
+type Props = { first?: boolean };
+
+const RecursiveButton: React.FC<Props> = ({ first }) => {
   const [clicked, setClicked] = React.useState(false);
 
   return clicked ? (
@@ -23,10 +25,9 @@ const RecursiveButton: React.FC = () => {
       </div>
     </div>
   ) : (
-    <button
-      className="r-button f-grow"
-      onClick={() => setClicked(true)}
-    ></button>
+    <button className="r-button f-grow" onClick={() => setClicked(true)}>
+      {first ? "Click me!" : null}
+    </button>
   );
 };
 
