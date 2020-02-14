@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./RecursiveButton.css";
 import { Howl } from "howler";
-import { useCountDispatch } from "./countContext";
+import { useButtonDispatch, useButtonState } from "./recursiveButtonContext";
 
 var sound = new Howl({
   src: ["pop.m4a"],
@@ -20,11 +20,31 @@ const RecursiveButton: React.FC<Props> = ({
   setClicked: setClickedProp
 }) => {
   const [clickedState, setClickedState] = React.useState(false);
-  const dispatch = useCountDispatch();
+  const { mode } = useButtonState();
+  const dispatch = useButtonDispatch();
 
+  const onOpenedClick =
+    mode === "undo"
+      ? (e: React.MouseEvent) => {
+          e.stopPropagation();
+          setClickedState(false);
+        }
+      : () => {};
   const open = clickedProp !== undefined ? clickedProp : clickedState;
   const onOpen =
-    setClickedProp !== undefined ? setClickedProp : setClickedState;
+    mode === "undo"
+      ? () => {}
+      : setClickedProp !== undefined
+      ? () => {
+          dispatch({ type: "addCount", payload: 7 });
+          setClickedProp(true);
+          sound.play();
+        }
+      : () => {
+          dispatch({ type: "addCount", payload: 7 });
+          setClickedState(true);
+          sound.play();
+        };
 
   useEffect(() => {
     if (clickedProp !== undefined) {
@@ -33,7 +53,7 @@ const RecursiveButton: React.FC<Props> = ({
   }, [clickedProp]);
 
   return open ? (
-    <div className="f-column f-grow">
+    <div className="f-column f-grow" onClick={onOpenedClick}>
       <div className="d-flex f-grow">
         <RecursiveButton />
         <RecursiveButton />
@@ -51,14 +71,7 @@ const RecursiveButton: React.FC<Props> = ({
       </div>
     </div>
   ) : (
-    <button
-      className="r-button f-grow"
-      onClick={() => {
-        dispatch(7);
-        onOpen(true);
-        sound.play();
-      }}
-    >
+    <button className="r-button f-grow" onClick={onOpen}>
       {first ? "Click me!" : null}
     </button>
   );

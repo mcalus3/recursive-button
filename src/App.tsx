@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
 import RecursiveButton from "./RecursiveButton";
-import { useCountState, useCountDispatch } from "./countContext";
+import {
+  useButtonState,
+  useButtonDispatch,
+  useChangeButtonMode
+} from "./recursiveButtonContext";
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const count = useCountState();
-  const dispatch = useCountDispatch();
+  const { count } = useButtonState();
+  const dispatch = useButtonDispatch();
+  const changeMode = useChangeButtonMode();
 
   return (
     <div className="app">
@@ -16,12 +21,22 @@ const App: React.FC = () => {
       <div>
         <button
           onClick={() => {
-            dispatch(-count + 1);
+            dispatch({ type: "addCount", payload: -count + 1 });
             setOpen(false);
           }}
         >
           reset
         </button>
+        <input
+          type="checkbox"
+          id="undo"
+          name="undo"
+          value="true"
+          onClick={changeMode}
+        />
+        <label htmlFor="undo" style={{ color: "white" }}>
+          undo mode
+        </label>
         <div style={{ color: "white" }}>Elements: {count}</div>
       </div>
     </div>
