@@ -1,6 +1,6 @@
 import * as React from "react";
 
-type ClickingMode = "default" | "undo";
+type ClickingMode = "default" | "undo" | "rampage";
 
 type State = {
   count: number;

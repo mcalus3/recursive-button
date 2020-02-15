@@ -23,6 +23,12 @@ const RecursiveButton: React.FC<Props> = ({
   const { mode } = useButtonState();
   const dispatch = useButtonDispatch();
 
+  useEffect(() => {
+    if (clickedProp !== undefined) {
+      setClickedState(clickedProp);
+    }
+  }, [clickedProp]);
+
   const onOpenedClick =
     mode === "undo"
       ? (e: React.MouseEvent) => {
@@ -45,12 +51,7 @@ const RecursiveButton: React.FC<Props> = ({
           setClickedState(true);
           sound.play();
         };
-
-  useEffect(() => {
-    if (clickedProp !== undefined) {
-      setClickedState(clickedProp);
-    }
-  }, [clickedProp]);
+  const onHover = mode === "rampage" ? onOpen : undefined;
 
   return open ? (
     <div className="f-column f-grow" onClick={onOpenedClick}>
@@ -71,7 +72,7 @@ const RecursiveButton: React.FC<Props> = ({
       </div>
     </div>
   ) : (
-    <button className="r-button f-grow" onClick={onOpen}>
+    <button className="r-button f-grow" onClick={onOpen} onMouseEnter={onHover}>
       {first ? "Click me!" : null}
     </button>
   );

@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { CountProvider } from "./recursiveButtonContext";
+import Providers from "./Providers";
 
 ReactDOM.render(
-  <CountProvider>
+  <Providers>
     <App />
-  </CountProvider>,
+  </Providers>,
   document.getElementById("root")
 );
 
