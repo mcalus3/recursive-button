@@ -13,7 +13,8 @@ const theme = {
   colors: {
     ...deep.colors,
     primary: "#816aaf",
-    background: "#282c34"
+    background: "#282c34",
+    gray: "#808080"
   },
   buttons: {
     ...deep.buttons,

@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Box, Link } from "theme-ui";
-import React from "react";
 
 const About = () => {
   return (

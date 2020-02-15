@@ -102,7 +102,7 @@ const ControlPanel: React.FC<Props> = ({ setOpen }) => {
               dispatch({ type: "changeState", payload: "rampage" });
             }}
           />
-          Rampage
+          Rampage (mouse only)
         </Label>
       </Flex>
     </Flex>

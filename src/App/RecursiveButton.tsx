@@ -73,7 +73,7 @@ const RecursiveButton: React.FC<Props> = ({
       </div>
     </div>
   ) : (
-    <button className="r-button f-grow" onClick={onOpen} onMouseEnter={onHover}>
+    <button className="r-button f-grow" onClick={onOpen} onMouseMove={onHover}>
       {first ? "Click me!" : null}
     </button>
   );
