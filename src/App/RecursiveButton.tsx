@@ -34,6 +34,7 @@ const RecursiveButton: React.FC<Props> = ({
       ? (e: React.MouseEvent) => {
           e.stopPropagation();
           setClickedState(false);
+          sound.play();
         }
       : () => {};
   const open = clickedProp !== undefined ? clickedProp : clickedState;
