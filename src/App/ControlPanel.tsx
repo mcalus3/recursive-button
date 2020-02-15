@@ -3,6 +3,9 @@ import { jsx } from "theme-ui";
 import React from "react";
 import { Flex, Link, Box, Button, Label, Radio } from "theme-ui";
 import { useButtonState, useButtonDispatch } from "./recursiveButtonContext";
+// @ts-ignore
+import swal from "@sweetalert/with-react";
+import About from "./About";
 
 type Props = { setOpen: (value: boolean) => void };
 
@@ -18,30 +21,28 @@ const ControlPanel: React.FC<Props> = ({ setOpen }) => {
           border: "1px solid",
           borderColor: "primary",
           display: "flex",
-          alignItems: "center",
+          justifyContent: "center",
           variant: "styles.header"
         }}
       >
-        <div sx={{ mx: "auto" }} />
         <Link
-          href="#"
           sx={{
             variant: "styles.navlink",
-            p: 2
+            p: 2,
+            cursor: "pointer",
+            textDecoration: "underline"
           }}
-        >
-          options
-        </Link>
-        <Link
-          href="#"
-          sx={{
-            variant: "styles.navlink",
-            p: 2
-          }}
+          onClick={() =>
+            swal({
+              buttons: {
+                cancel: "Close"
+              },
+              content: <About />
+            })
+          }
         >
           about
         </Link>
-        <div sx={{ mx: "auto" }} />
       </header>
       <Box mb={2}>
         <Button
