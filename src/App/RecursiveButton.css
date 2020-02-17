@@ -13,7 +13,7 @@
 
 .r-button {
   box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #f9f9f9 0%, #e9e9e9 100%);
+  background: linear-gradient(to bottom, #f9f8fb 0%, #e3dfec 100%);
   border: 0;
   padding: 0;
   outline: 1px solid black;
@@ -21,9 +21,9 @@
 }
 
 .r-button:hover {
-  background: linear-gradient(to bottom, #e9e9e9 0%, #f9f9f9 100%);
+  background: linear-gradient(to bottom, #e3dfec 0%, #f9f8fb 100%);
 }
 
 .r-button:active {
-  background: linear-gradient(to bottom, #e0e0e0 0%, #f0f0f0 100%);
+  background: linear-gradient(to bottom, #dcd8e9 0%, #eeecf4 100%);
 }
