@@ -58,7 +58,6 @@ const ControlPanel: React.FC<Props> = ({ setOpen }) => {
           sx={{
             ml: 2,
             display: "inline-block",
-            color: "white",
             width: "15ch"
           }}
         >

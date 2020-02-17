@@ -7,18 +7,19 @@ import { CountProvider } from "./recursiveButtonContext";
 const theme = {
   ...deep,
   forms: {
-    ...deep.forms,
-    label: { color: "white" }
+    ...deep.forms
   },
   colors: {
     ...deep.colors,
-    primary: "#816aaf",
-    background: "#282c34",
-    gray: "#808080"
+    primary: "#816AAF",
+    background: "#2E2442",
+    gray: "#918B9D",
+    text: "#E9E4F1"
   },
   buttons: {
     ...deep.buttons,
     primary: {
+      color: "#E9E4F1",
       backgroundColor: "primary",
       "&:hover": {
         backgroundColor: "secondary"
