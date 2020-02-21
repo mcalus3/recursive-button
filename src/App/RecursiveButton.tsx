@@ -4,8 +4,7 @@ import { Howl } from "howler";
 import { useButtonDispatch, useButtonState } from "./recursiveButtonContext";
 
 var sound = new Howl({
-  src: ["pop.m4a"],
-  volume: 0.5
+  src: ["pop.m4a"]
 });
 
 type Props = {

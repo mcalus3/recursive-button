@@ -70,7 +70,6 @@ const ControlPanel: React.FC<Props> = ({ setOpen }) => {
             id="default"
             name="mode"
             value="default"
-            defaultChecked
             checked={mode === "default"}
             onChange={() => {
               dispatch({ type: "changeState", payload: "default" });
@@ -101,7 +100,7 @@ const ControlPanel: React.FC<Props> = ({ setOpen }) => {
               dispatch({ type: "changeState", payload: "rampage" });
             }}
           />
-          Rampage (mouse only)
+          Rampage
         </Label>
       </Flex>
     </Flex>
