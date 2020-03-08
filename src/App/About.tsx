@@ -20,6 +20,20 @@ const About = () => {
       </p>
       <ul sx={{ textAlign: "start" }}>
         <li>
+          You can read more about it in
+          <Link
+            href="https://mcalus.dev/posts/recursive-buttons-part-1"
+            sx={{
+              variant: "styles.navlink",
+              p: 2
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            my blog post
+          </Link>
+        </li>
+        <li>
           <Link
             href="https://github.com/mcalus3/recursive-button"
             sx={{
